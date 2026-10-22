@@ -1,9 +1,10 @@
 (() => {
-  // TODO: რეალური სამუშაო საათები (თბილისის დროით)
-  const OPEN = 9 * 60;
-  const CLOSE = 22 * 60;
+  // Stories by Affogato — ორშ–კვი 09:00–22:00 (თბილისის დროით)
+  const STORIES_OPEN = 9 * 60;
+  const STORIES_CLOSE = 22 * 60;
 
   const root = document.documentElement;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const store = {
     get(k) { try { return localStorage.getItem(k); } catch { return null; } },
     set(k, v) { try { localStorage.setItem(k, v); } catch { /* storage unavailable */ } },
@@ -28,14 +29,14 @@
   langButtons.forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
 
   /* ---------- open / closed ---------- */
-  const statusEl = document.getElementById('status');
+  const statusEl = document.getElementById('status-stories');
   function renderStatus() {
     if (!statusEl) return;
     const [h, m] = new Intl.DateTimeFormat('en-GB', {
       timeZone: 'Asia/Tbilisi', hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
     }).format(new Date()).split(':').map(Number);
     const now = h * 60 + m;
-    const open = now >= OPEN && now < CLOSE;
+    const open = now >= STORIES_OPEN && now < STORIES_CLOSE;
     statusEl.className = 'status ' + (open ? 'open' : 'closed');
     statusEl.textContent = open
       ? (lang === 'en' ? 'Open now' : 'ახლა ღიაა')
@@ -79,16 +80,35 @@
     });
   });
 
-  /* ---------- replay the pour ---------- */
+  /* ---------- "new" carousel ---------- */
+  const track = document.getElementById('news-track');
+  document.querySelectorAll('[data-scroll]').forEach((b) => {
+    b.addEventListener('click', () => {
+      const card = track.querySelector('.news-card');
+      const step = card ? card.getBoundingClientRect().width + 20 : 320;
+      track.scrollBy({ left: step * Number(b.dataset.scroll), behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  });
+
+  /* ---------- affogato pour ---------- */
   const glass = document.querySelector('.affogato');
-  glass.addEventListener('click', () => {
+  function pour() {
     glass.classList.remove('is-playing');
     void glass.getBoundingClientRect();
     glass.classList.add('is-playing');
+  }
+  glass.addEventListener('click', pour);
+
+  /* ---------- scroll-driven: reveal, pour, videos ---------- */
+  const revealEls = document.querySelectorAll('.reveal');
+  const videos = document.querySelectorAll('.auto-video');
+
+  // some reels end on a logo card — loop before it
+  videos.forEach((v) => {
+    const end = Number(v.dataset.loopEnd);
+    if (end) v.addEventListener('timeupdate', () => { if (v.currentTime >= end) v.currentTime = 0; });
   });
 
-  /* ---------- scroll reveal ---------- */
-  const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => {
@@ -96,8 +116,25 @@
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach((el) => io.observe(el));
+
+    const glassIO = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) { pour(); glassIO.disconnect(); }
+    }, { threshold: 0.5 });
+    glassIO.observe(glass);
+
+    if (!reduceMotion) {
+      const vio = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          const v = en.target;
+          if (en.isIntersecting) v.play().catch(() => {});
+          else v.pause();
+        });
+      }, { threshold: 0.25 });
+      videos.forEach((v) => vio.observe(v));
+    }
   } else {
     revealEls.forEach((el) => el.classList.add('in'));
+    glass.classList.add('is-playing');
   }
 
   document.getElementById('year').textContent = new Date().getFullYear();

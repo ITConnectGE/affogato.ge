@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Affogato • აფოგატო — Coffee Culture, Tbilisi</title>
-  <meta name="description" content="Affogato • აფოგატო — ყავის სახლი თბილისში. პრემიუმ და გურმე ინგრედიენტები, სენდვიჩები და სალათები. Our signature is coffee culture.">
+  <meta name="description" content="Affogato • აფოგატო — ყავის კულტურა თბილისში. Affogato East Point-ში და ახალი ფილიალი Stories by Affogato ვაკეში: საუზმე, ბრანჩი, ვახშამი და კეიტერინგი.">
   <meta name="theme-color" content="#22382a">
   <meta property="og:title" content="Affogato • აფოგატო | Tbilisi">
-  <meta property="og:description" content="Coffee shop · Premium & gourmet ingredients · Sandwiches & salads · Our signature is coffee culture">
+  <meta property="og:description" content="Coffee culture in Tbilisi — Affogato at East Point and the new Stories by Affogato in Vake.">
+  <meta property="og:image" content="assets/media/stories-storefront.webp">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,10 +34,10 @@
       <span class="brand-word">affogato</span>
     </a>
     <ul class="nav-links" id="nav-links">
+      <li><a href="#new" data-en="New">სიახლეები</a></li>
       <li><a href="#menu" data-en="Menu">მენიუ</a></li>
-      <li><a href="#ritual" data-en="Ritual">რიტუალი</a></li>
-      <li><a href="#about" data-en="About">ჩვენ შესახებ</a></li>
-      <li><a href="#visit" data-en="Visit">მოგვინახულეთ</a></li>
+      <li><a href="#stories" class="nav-stories">Stories</a></li>
+      <li><a href="#locations" data-en="Locations">ფილიალები</a></li>
     </ul>
     <div class="nav-tools">
       <div class="lang" role="group" aria-label="Language">
@@ -51,20 +52,20 @@
 
   <div class="hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow reveal-load" style="--d:.1s" data-en="Coffee shop · Tbilisi">ყავის სახლი · თბილისი</p>
+      <p class="eyebrow reveal-load" style="--d:.1s" data-en="Coffee culture · Tbilisi">ყავის კულტურა · თბილისი</p>
       <h1 class="hero-title">
         <span class="line reveal-load" style="--d:.2s" data-en="Coffee culture,">ყავის კულტურა,</span>
         <span class="line accent reveal-load" style="--d:.35s" data-en="poured slowly.">ნელა ჩამოსხმული.</span>
       </h1>
-      <p class="lead reveal-load" style="--d:.5s" data-en="Quality coffee, premium &amp; gourmet ingredients, sandwiches and salads — and an affogato that lives up to our name.">ხარისხიანი ყავა, პრემიუმ და გურმე ინგრედიენტები, სენდვიჩები და სალათები — და აფოგატო, რომელიც ჩვენს სახელს იმსახურებს.</p>
+      <p class="lead reveal-load" style="--d:.5s" data-en="Premium &amp; gourmet ingredients, bowls, pasta and sandwiches — at Affogato in East Point and at our new home in Vake, &lt;b&gt;Stories by Affogato&lt;/b&gt;.">პრემიუმ და გურმე ინგრედიენტები, ბოულები, პასტა და სენდვიჩები — Affogato-ში, East Point-ში და ჩვენს ახალ სახლში ვაკეში — <b>Stories by Affogato</b>.</p>
       <div class="cta-row reveal-load" style="--d:.65s">
-        <a class="btn btn-sand" href="#menu" data-en="See the menu">ნახე მენიუ</a>
-        <a class="btn btn-ghost" href="#visit" data-en="Find us">როგორ მოგვაგნოთ</a>
+        <a class="btn btn-sand" href="https://wolt.com/ka/geo/tbilisi/restaurant/affogato" target="_blank" rel="noopener" data-en="Order on Wolt">შეუკვეთე Wolt-ზე</a>
+        <a class="btn btn-ghost" href="#locations" data-en="Our locations">ფილიალები</a>
       </div>
       <ul class="chips reveal-load" style="--d:.8s">
         <li data-en="Premium ingredients">პრემიუმ ინგრედიენტები</li>
-        <li data-en="Sandwiches &amp; salads">სენდვიჩები &amp; სალათები</li>
-        <li data-en="Coffee culture">ყავის კულტურა</li>
+        <li data-en="Bowls, pasta &amp; sandwiches">ბოულები, პასტა &amp; სენდვიჩები</li>
+        <li data-en="New: Stories, Vake">ახალი: Stories, ვაკე</li>
       </ul>
     </div>
 
@@ -73,93 +74,202 @@
         <defs><path id="circ" d="M100 100 m-82 0 a82 82 0 1 1 164 0 a82 82 0 1 1 -164 0"/></defs>
         <text><textPath href="#circ">COFFEE CULTURE · ყავის კულტურა · TBILISI · თბილისი ·</textPath></text>
       </svg>
-
-      <svg class="affogato is-playing" viewBox="0 0 360 440" role="img" aria-label="An espresso shot poured over a scoop of vanilla gelato">
-        <title>Affogato</title>
-        <defs>
-          <clipPath id="glassClip">
-            <path d="M92 150 L268 150 L254 392 Q252 410 234 410 L126 410 Q108 410 106 392 Z"/>
-          </clipPath>
-          <linearGradient id="espGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#7a4a2a"/>
-            <stop offset=".12" stop-color="#4a2c1b"/>
-            <stop offset="1" stop-color="#24150d"/>
-          </linearGradient>
-          <radialGradient id="scoopGrad" cx=".38" cy=".3" r=".8">
-            <stop offset="0" stop-color="#fffaf0"/>
-            <stop offset=".6" stop-color="#f6ecd9"/>
-            <stop offset="1" stop-color="#e2d2b6"/>
-          </radialGradient>
-        </defs>
-
-        <!-- shadow -->
-        <ellipse cx="180" cy="420" rx="96" ry="9" fill="#000" opacity=".22"/>
-
-        <!-- glass back -->
-        <path d="M88 146 L272 146 L258 394 Q255 414 234 414 L126 414 Q105 414 102 394 Z" fill="rgba(244,237,227,.06)"/>
-
-        <!-- gelato scoop -->
-        <g class="scoop">
-          <path d="M120 215 C118 167 150 143 180 143 C212 143 244 167 240 215 Q232 227 222 219 Q212 231 200 221 Q190 233 180 222 Q170 233 160 221 Q150 231 138 219 Q128 227 120 215 Z" fill="url(#scoopGrad)"/>
-          <ellipse cx="160" cy="166" rx="14" ry="8" fill="#fff" opacity=".7" transform="rotate(-25 160 166)"/>
-          <g fill="#5b3b24" opacity=".55">
-            <circle cx="196" cy="170" r="1.4"/><circle cx="210" cy="186" r="1.2"/><circle cx="170" cy="192" r="1.3"/>
-            <circle cx="150" cy="198" r="1.1"/><circle cx="222" cy="200" r="1.3"/><circle cx="186" cy="204" r="1.1"/>
-          </g>
-          <path class="drip d1" d="M176 146 C173 160 179 170 175 186 C173 196 183 198 182 188 C181 174 187 160 184 146 Z" fill="#4a2c1b"/>
-          <path class="drip d2" d="M192 148 C196 158 200 164 206 176 C210 186 218 182 214 174 C208 162 202 154 196 146 Z" fill="#5a3520"/>
-        </g>
-
-        <!-- espresso rising inside the glass -->
-        <g clip-path="url(#glassClip)">
-          <g class="espresso">
-            <path d="M60 150 Q90 143 120 150 T180 150 T240 150 T300 150 V720 H60 Z" fill="url(#espGrad)" opacity=".94"/>
-            <path d="M60 150 Q90 143 120 150 T180 150 T240 150 T300 150" fill="none" stroke="#c08a58" stroke-width="5" opacity=".85"/>
-          </g>
-        </g>
-
-        <!-- glass outline + highlight -->
-        <path d="M88 146 L272 146 L258 394 Q255 414 234 414 L126 414 Q105 414 102 394 Z" fill="none" stroke="#d0bdac" stroke-width="3.5" stroke-linejoin="round"/>
-        <path d="M108 172 L118 384" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".14"/>
-        <path d="M86 146 H274" stroke="#e6dacd" stroke-width="5" stroke-linecap="round"/>
-
-        <!-- espresso stream -->
-        <path class="stream" d="M217 47 C214 80 196 112 184 146" pathLength="100" fill="none" stroke="#4a2c1b" stroke-width="7" stroke-linecap="round"/>
-
-        <!-- espresso cup -->
-        <g transform="translate(250 40)">
-          <g class="cup">
-            <path d="M27 -10 q15 1 13 14 q-2 11 -15 8" fill="none" stroke="#d0bdac" stroke-width="5" stroke-linecap="round"/>
-            <path d="M-28 -18 L28 -18 Q27 18 0 22 Q-27 18 -28 -18 Z" fill="#e6dacd"/>
-            <path d="M-28 -18 L28 -18" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".5"/>
-          </g>
-        </g>
-      </svg>
-      <p class="art-hint" data-en="tap the glass to pour again">შეეხე ჭიქას — კიდევ ჩამოასხი</p>
+      <div class="arch">
+        <video class="auto-video" src="assets/media/stories-barista.mp4" poster="assets/media/stories-barista.webp" data-loop-end="5.4" muted loop playsinline preload="metadata" aria-label="Coffee at the bar"></video>
+      </div>
+      <figure class="float-card">
+        <img src="assets/media/affogato-biscoff-latte.webp" alt="Biscoff latte — Affogato" width="1000" height="1000">
+      </figure>
+      <a class="rating" href="https://wolt.com/ka/geo/tbilisi/restaurant/affogato" target="_blank" rel="noopener">
+        <b>9.4</b><span>Wolt ★</span>
+      </a>
     </div>
   </div>
 </header>
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>ესპრესო</span><svg><use href="#mark"/></svg><span>Affogato</span><svg><use href="#mark"/></svg>
-    <span>ფლეტ უაიტი</span><svg><use href="#mark"/></svg><span>Cold brew</span><svg><use href="#mark"/></svg>
-    <span>სენდვიჩები</span><svg><use href="#mark"/></svg><span>Salads</span><svg><use href="#mark"/></svg>
-    <span>კაპუჩინო</span><svg><use href="#mark"/></svg><span>Coffee culture</span><svg><use href="#mark"/></svg>
-    <span>ესპრესო</span><svg><use href="#mark"/></svg><span>Affogato</span><svg><use href="#mark"/></svg>
-    <span>ფლეტ უაიტი</span><svg><use href="#mark"/></svg><span>Cold brew</span><svg><use href="#mark"/></svg>
-    <span>სენდვიჩები</span><svg><use href="#mark"/></svg><span>Salads</span><svg><use href="#mark"/></svg>
-    <span>კაპუჩინო</span><svg><use href="#mark"/></svg><span>Coffee culture</span><svg><use href="#mark"/></svg>
+    <span>Biscoff latte</span><svg><use href="#mark"/></svg><span>ტირამისუ ფრედო</span><svg><use href="#mark"/></svg>
+    <span>Lime brew</span><svg><use href="#mark"/></svg><span>კენკრის პანაკოტა</span><svg><use href="#mark"/></svg>
+    <span>Banana latte</span><svg><use href="#mark"/></svg><span>ბელგიური ვაფლი</span><svg><use href="#mark"/></svg>
+    <span>Brunch at Stories</span><svg><use href="#mark"/></svg><span>ორაგულის ბოული</span><svg><use href="#mark"/></svg>
+    <span>Biscoff latte</span><svg><use href="#mark"/></svg><span>ტირამისუ ფრედო</span><svg><use href="#mark"/></svg>
+    <span>Lime brew</span><svg><use href="#mark"/></svg><span>კენკრის პანაკოტა</span><svg><use href="#mark"/></svg>
+    <span>Banana latte</span><svg><use href="#mark"/></svg><span>ბელგიური ვაფლი</span><svg><use href="#mark"/></svg>
+    <span>Brunch at Stories</span><svg><use href="#mark"/></svg><span>ორაგულის ბოული</span><svg><use href="#mark"/></svg>
   </div>
 </div>
 
 <main>
+  <section class="news" id="new">
+    <div class="wrap">
+      <div class="news-head reveal">
+        <div>
+          <p class="eyebrow" data-en="New at Affogato">სიახლე აფოგატოში</p>
+          <h2 data-en="Fresh off the bar">ახალი ვიტრინაზე</h2>
+        </div>
+        <div class="news-nav">
+          <button type="button" class="round-btn" data-scroll="-1" aria-label="Previous">←</button>
+          <button type="button" class="round-btn" data-scroll="1" aria-label="Next">→</button>
+        </div>
+      </div>
+    </div>
+    <ul class="news-track" id="news-track">
+      <li class="news-card">
+        <img src="assets/media/affogato-biscoff-latte.webp" alt="Biscoff Latte" width="1000" height="1000" loading="lazy">
+        <h3>Biscoff Latte</h3>
+        <p data-en="A smooth latte with the original Biscoff flavour">ნაზი ლატე Biscoff-ის ორიგინალური არომატით</p>
+      </li>
+      <li class="news-card">
+        <img src="assets/media/affogato-lime-brew.webp" alt="Lime Brew" width="1000" height="1000" loading="lazy">
+        <h3>Lime Brew</h3>
+        <p data-en="Cold coffee with a refreshing hint of lime">ცივი ყავა და ლაიმის გამაგრილებელი არომატი</p>
+      </li>
+      <li class="news-card">
+        <img src="assets/media/affogato-banana-latte.webp" alt="Banana Latte" width="1000" height="1000" loading="lazy">
+        <h3>Banana Latte</h3>
+        <p data-en="Banana, latte and milk in perfect harmony">ბანანის, ლატეს და რძის ჰარმონიული ნაზავი</p>
+      </li>
+      <li class="news-card">
+        <img src="assets/media/affogato-panna-cotta.webp" alt="კენკრის პანაკოტა" width="1000" height="1000" loading="lazy">
+        <h3 data-en="Berry panna cotta">კენკრის პანაკოტა</h3>
+        <p data-en="Airy panna cotta with a delicate berry sauce">ჰაეროვანი პანაკოტა და კენკრის დახვეწილი სოუსი</p>
+      </li>
+      <li class="news-card">
+        <img src="assets/media/affogato-summer-bowl.webp" alt="ზაფხულის ბოული" width="1000" height="1000" loading="lazy">
+        <h3 data-en="Summer bowl">ზაფხულის ბოული</h3>
+        <p data-en="With orange and stracciatella">ფორთოხლით და სტრაჩატელით</p>
+      </li>
+      <li class="news-card">
+        <img src="assets/media/affogato-belgian-waffle.webp" alt="ბელგიური ვაფლი" width="1000" height="1000" loading="lazy">
+        <h3 data-en="Belgian waffle">ბელგიური ვაფლი</h3>
+        <p data-en="Her Majesty, the Belgian waffle">მისი უდიდებულესობა ბელგიური ვაფლი</p>
+      </li>
+      <li class="news-card">
+        <img src="assets/media/affogato-pink-spiced-latte.webp" alt="Pink Spiced Latte" width="1000" height="1000" loading="lazy">
+        <h3>Pink Spiced Latte</h3>
+        <p data-en="Our seasonal spring special">ჩვენი სეზონური, საგაზაფხულო სპეციალი</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <div class="menu-head reveal">
+        <div>
+          <p class="eyebrow" data-en="Affogato menu">აფოგატოს მენიუ</p>
+          <h2 data-en="For any hour of the day">დღის ნებისმიერ დროს</h2>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Menu categories">
+          <button role="tab" id="tab-drinks" aria-controls="p-drinks" aria-selected="true" data-en="Coffee &amp; drinks">ყავა &amp; სასმელი</button>
+          <button role="tab" id="tab-bowls" aria-controls="p-bowls" aria-selected="false" tabindex="-1" data-en="Bowls &amp; salads">ბოული &amp; სალათი</button>
+          <button role="tab" id="tab-pasta" aria-controls="p-pasta" aria-selected="false" tabindex="-1" data-en="Pasta">პასტა</button>
+          <button role="tab" id="tab-sand" aria-controls="p-sand" aria-selected="false" tabindex="-1" data-en="Sandwiches &amp; toasts">სენდვიჩი &amp; ტოსტი</button>
+          <button role="tab" id="tab-sweet" aria-controls="p-sweet" aria-selected="false" tabindex="-1" data-en="Sweets">ტკბილეული</button>
+        </div>
+      </div>
+
+      <!-- ფასები: Affogato-ს მენიუ Wolt-ზე (wolt.com/ka/geo/tbilisi/restaurant/affogato) -->
+      <div class="panels">
+        <ul class="menu-list" role="tabpanel" id="p-drinks" aria-labelledby="tab-drinks">
+          <li class="feat"><div class="mi-top"><h3 data-en="Tiramisu Freddo">ტირამისუ ფრედო</h3><span class="dots"></span><span class="price">12.90</span></div><p data-en="Double espresso, ice cream, tiramisu sticks — our affogato-style cold coffee">ორმაგი ესპრესო, ნაყინი, ტირამისუს ჩხირები — ჩვენი აფოგატოს სტილის ცივი ყავა</p></li>
+          <li><div class="mi-top"><h3 data-en="Oriental coffee">ყავა აღმოსავლურად</h3><span class="dots"></span><span class="price">6.90</span></div><p data-en="Brewed the traditional way">ტრადიციულად მოხარშული</p></li>
+          <li><div class="mi-top"><h3 data-en="Hot chocolate">ცხელი შოკოლადი</h3><span class="dots"></span><span class="price">8.90</span></div></li>
+          <li><div class="mi-top"><h3 data-en="Tea">ჩაი</h3><span class="dots"></span><span class="price">6.00</span></div></li>
+          <li><div class="mi-top"><h3 data-en="Fresh orange juice">ახლად დაწურული ფორთოხლის წვენი</h3><span class="dots"></span><span class="price">12.00</span></div></li>
+          <li><div class="mi-top"><h3 data-en="Coffee beans, 250 g">ყავის მარცვალი, 250 გრ</h3><span class="dots"></span><span class="price">39.00</span></div><p data-en="Take our coffee home">წაიღე ჩვენი ყავა სახლში</p></li>
+        </ul>
+        <ul class="menu-list" role="tabpanel" id="p-bowls" aria-labelledby="tab-bowls" hidden>
+          <li><div class="mi-top"><h3 data-en="Smoked salmon bowl">ორაგულის ბოული</h3><span class="dots"></span><span class="price">21.90</span></div><p data-en="Smoked salmon, rice, broccoli, egg">შებოლილი ორაგული, ბრინჯი, ბროკოლი, კვერცხი</p></li>
+          <li><div class="mi-top"><h3 data-en="Pesto chicken bowl">პესტო ჩიქენ ბოული</h3><span class="dots"></span><span class="price">18.90</span></div><p data-en="Chicken fillet, rice, feta and pesto">ქათმის ფილე, ბრინჯი, ფეტა და პესტო</p></li>
+          <li><div class="mi-top"><h3 data-en="Stracciatella &amp; orange bowl">სტრაჩატელას და ფორთოხლის ბოული</h3><span class="dots"></span><span class="price">17.90</span></div><p data-en="Stracciatella, cashew, orange, greens, cherry tomato, honey-Dijon dressing">სტრაჩატელა, ქეშიუ, ფორთოხალი, სალათის ფოთოლი, ჩერი, დიჟონის და თაფლის დრესინგი</p></li>
+          <li><div class="mi-top"><h3 data-en="Super quinoa">სუპერ-ქინოა</h3><span class="dots"></span><span class="price">15.90</span></div><p data-en="Quinoa, broccoli, sun-dried tomato, honey-lemon dressing">ქინოა, ბროკოლი, გამომშრალი პომიდორი, თაფლის-ლიმონის დრესინგი</p></li>
+          <li><div class="mi-top"><h3 data-en="Chicken Caesar">ცეზარი ქათმით</h3><span class="dots"></span><span class="price">20.90</span></div><p data-en="Iceberg, chicken, croutons, parmesan, cherry tomato">აისბერგი, ქათმის ფილე, კრუტონები, პარმეზანი, ჩერი პომიდორი</p></li>
+        </ul>
+        <ul class="menu-list" role="tabpanel" id="p-pasta" aria-labelledby="tab-pasta" hidden>
+          <li><div class="mi-top"><h3 data-en="Pasta Alfredo">პასტა ალფრედო</h3><span class="dots"></span><span class="price">20.90</span></div><p data-en="Penne, chicken, mushrooms, cream, parmesan">პენე, ქათმის ფილე, ხის სოკო, ნაღები, პარმეზანი</p></li>
+          <li><div class="mi-top"><h3 data-en="Pasta Carbonara">პასტა კარბონარა</h3><span class="dots"></span><span class="price">20.90</span></div><p data-en="Penne, bacon, egg, white wine, parmesan, cherry tomato">პენე, ბეკონი, კვერცხი, თეთრი ღვინო, პარმეზანი, ჩერი პომიდორი</p></li>
+          <li><div class="mi-top"><h3 data-en="Penne Quattro Formaggi">პენე კუატრო ფორმაჯი</h3><span class="dots"></span><span class="price">19.90</span></div><p data-en="Emmental, mozzarella, blue cheese, parmesan, white wine, basil">ემენტალი, მოცარელა, ლურჯი ყველი, პარმეზანი, თეთრი ღვინო, ბაზილიკი</p></li>
+          <li><div class="mi-top"><h3 data-en="Pasta al Pomodoro">პასტა ალ პომოდორო</h3><span class="dots"></span><span class="price">16.90</span></div><p data-en="Penne, peeled tomato, garlic, parsley, parmesan">პენე, კანგაცლილი პომიდორი, ნიორი, ოხრახუში, პარმეზანი</p></li>
+        </ul>
+        <ul class="menu-list" role="tabpanel" id="p-sand" aria-labelledby="tab-sand" hidden>
+          <li><div class="mi-top"><h3 data-en="Salmon Fresh">სალმონ ფრეში</h3><span class="dots"></span><span class="price">20.90</span></div><p data-en="Grain bread, smoked salmon, cream cheese, radish, rocket">მარცვლოვანი პური, შებოლილი ორაგული, კრემ-ყველი, ბოლოკი, რუკოლა</p></li>
+          <li><div class="mi-top"><h3 data-en="Chicken Rucola">ჩიქენ რუკოლა</h3><span class="dots"></span><span class="price">17.90</span></div><p data-en="Grain bread, chicken, cream cheese, mozzarella, rocket">მარცვლოვანი პური, ქათმის ფილე, კრემ-ყველი, მოცარელა, რუკოლა</p></li>
+          <li><div class="mi-top"><h3 data-en="Ham Supreme">ჰემ სუპრიმი</h3><span class="dots"></span><span class="price">16.90</span></div><p data-en="Grain bread, ham, mozzarella, truffle sauce">მარცვლოვანი პური, ლორი, მოცარელა, ტრუფელის სოუსი</p></li>
+          <li><div class="mi-top"><h3 data-en="Bacon Berry">ბეკონ ბერი</h3><span class="dots"></span><span class="price">16.90</span></div><p data-en="Grain bread, bacon, mozzarella, cream cheese, blueberry jam">მარცვლოვანი პური, ბეკონი, მოცარელა, კრემ-ყველი, მოცვის ჯემი</p></li>
+          <li><div class="mi-top"><h3 data-en="Triple cheese truffle toast">ტრიპლ ჩიზი ტრუფელით</h3><span class="dots"></span><span class="price">14.00</span></div><p data-en="Cream cheese, mozzarella, Emmental, truffle sauce, honey">კრემ-ყველი, მოცარელა, ემენტალი, ტრუფელის სოუსი, თაფლი</p></li>
+          <li><div class="mi-top"><h3 data-en="Tuna Piccante toast">ტუნა პიკანტი</h3><span class="dots"></span><span class="price">14.00</span></div><p data-en="Tuna, pickles, corn, mayo dressing">ტუნა, მჟავე კიტრი, სიმინდი, მაიონეზის დრესინგი</p></li>
+          <li><div class="mi-top"><h3 data-en="Salami &amp; rocket toast">სალიამი &amp; რუკოლა</h3><span class="dots"></span><span class="price">14.00</span></div><p data-en="Salami, rocket, parmesan, cherry tomato, balsamic glaze">სალიამი, რუკოლა, პარმეზანი, ჩერი პომიდორი, ბალზამიკო</p></li>
+        </ul>
+        <ul class="menu-list" role="tabpanel" id="p-sweet" aria-labelledby="tab-sweet" hidden>
+          <li><div class="mi-top"><h3 data-en="Berry cheesecake">ჩიზქეიქი კენკრით</h3><span class="dots"></span><span class="price">16.00</span></div></li>
+          <li><div class="mi-top"><h3 data-en="Tiramisu in a glass">ტირამისუ ჭიქაში</h3><span class="dots"></span><span class="price">13.50</span></div></li>
+          <li><div class="mi-top"><h3 data-en="Napoleon in a glass">ნაპოლეონი ჭიქაში</h3><span class="dots"></span><span class="price">11.50</span></div></li>
+          <li><div class="mi-top"><h3 data-en="Panna cotta">პანაკოტა</h3><span class="dots"></span><span class="price">11.50</span></div></li>
+          <li><div class="mi-top"><h3 data-en="Almond croissant">კრუასანი ნუშით</h3><span class="dots"></span><span class="price">9.00</span></div></li>
+          <li><div class="mi-top"><h3 data-en="Carrot cake">სტაფილოს კექსი</h3><span class="dots"></span><span class="price">7.00</span></div></li>
+          <li><div class="mi-top"><h3 data-en="Pain au chocolat">პანო შოკოლა</h3><span class="dots"></span><span class="price">6.00</span></div></li>
+          <li><div class="mi-top"><h3 data-en="Classic croissant">კრუასანი კლასიკური</h3><span class="dots"></span><span class="price">5.90</span></div></li>
+        </ul>
+      </div>
+      <p class="menu-note"><span data-en="Prices in GEL (₾), as listed on Wolt">ფასები ლარშია (₾), Wolt-ის მენიუს მიხედვით</span> · <a href="https://wolt.com/ka/geo/tbilisi/restaurant/affogato" target="_blank" rel="noopener" data-en="Full menu on Wolt ↗">სრული მენიუ Wolt-ზე ↗</a></p>
+    </div>
+  </section>
+
   <section class="ritual" id="ritual">
     <div class="wrap ritual-grid">
       <div class="ritual-head reveal">
-        <p class="eyebrow" data-en="Our signature">ჩვენი სიგნატურა</p>
+        <p class="eyebrow" data-en="Our name">ჩვენი სახელი</p>
         <h2 data-en="Anatomy of an affogato">აფოგატოს ანატომია</h2>
         <p class="body-lg" data-en="In Italian, &lt;i&gt;affogato&lt;/i&gt; means “drowned” — gelato sinking into hot espresso. It’s simple. That’s exactly why it has to be perfect.">იტალიურად <i>affogato</i> „დამხრჩვალს“ ნიშნავს — ნაყინი, რომელიც ცხელ ესპრესოში იძირება. მარტივია. ზუსტად ამიტომ უნდა იყოს სრულყოფილი.</p>
+
+        <svg class="affogato" viewBox="0 0 360 440" role="img" aria-label="An espresso shot poured over a scoop of vanilla gelato">
+          <title>Affogato</title>
+          <defs>
+            <clipPath id="glassClip">
+              <path d="M92 150 L268 150 L254 392 Q252 410 234 410 L126 410 Q108 410 106 392 Z"/>
+            </clipPath>
+            <linearGradient id="espGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#7a4a2a"/>
+              <stop offset=".12" stop-color="#4a2c1b"/>
+              <stop offset="1" stop-color="#24150d"/>
+            </linearGradient>
+            <radialGradient id="scoopGrad" cx=".38" cy=".3" r=".8">
+              <stop offset="0" stop-color="#fffaf0"/>
+              <stop offset=".6" stop-color="#f6ecd9"/>
+              <stop offset="1" stop-color="#e2d2b6"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="180" cy="420" rx="96" ry="9" fill="#000" opacity=".12"/>
+          <path d="M88 146 L272 146 L258 394 Q255 414 234 414 L126 414 Q105 414 102 394 Z" fill="rgba(49,76,57,.05)"/>
+          <g class="scoop">
+            <path d="M120 215 C118 167 150 143 180 143 C212 143 244 167 240 215 Q232 227 222 219 Q212 231 200 221 Q190 233 180 222 Q170 233 160 221 Q150 231 138 219 Q128 227 120 215 Z" fill="url(#scoopGrad)"/>
+            <ellipse cx="160" cy="166" rx="14" ry="8" fill="#fff" opacity=".7" transform="rotate(-25 160 166)"/>
+            <g fill="#5b3b24" opacity=".55">
+              <circle cx="196" cy="170" r="1.4"/><circle cx="210" cy="186" r="1.2"/><circle cx="170" cy="192" r="1.3"/>
+              <circle cx="150" cy="198" r="1.1"/><circle cx="222" cy="200" r="1.3"/><circle cx="186" cy="204" r="1.1"/>
+            </g>
+            <path class="drip d1" d="M176 146 C173 160 179 170 175 186 C173 196 183 198 182 188 C181 174 187 160 184 146 Z" fill="#4a2c1b"/>
+            <path class="drip d2" d="M192 148 C196 158 200 164 206 176 C210 186 218 182 214 174 C208 162 202 154 196 146 Z" fill="#5a3520"/>
+          </g>
+          <g clip-path="url(#glassClip)">
+            <g class="espresso">
+              <path d="M60 150 Q90 143 120 150 T180 150 T240 150 T300 150 V720 H60 Z" fill="url(#espGrad)" opacity=".94"/>
+              <path d="M60 150 Q90 143 120 150 T180 150 T240 150 T300 150" fill="none" stroke="#c08a58" stroke-width="5" opacity=".85"/>
+            </g>
+          </g>
+          <path d="M88 146 L272 146 L258 394 Q255 414 234 414 L126 414 Q105 414 102 394 Z" fill="none" stroke="#314c39" stroke-width="3.5" stroke-linejoin="round"/>
+          <path d="M108 172 L118 384" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".25"/>
+          <path d="M86 146 H274" stroke="#314c39" stroke-width="5" stroke-linecap="round"/>
+          <path class="stream" d="M217 47 C214 80 196 112 184 146" pathLength="100" fill="none" stroke="#4a2c1b" stroke-width="7" stroke-linecap="round"/>
+          <g transform="translate(250 40)">
+            <g class="cup">
+              <path d="M27 -10 q15 1 13 14 q-2 11 -15 8" fill="none" stroke="#314c39" stroke-width="5" stroke-linecap="round"/>
+              <path d="M-28 -18 L28 -18 Q27 18 0 22 Q-27 18 -28 -18 Z" fill="#314c39"/>
+            </g>
+          </g>
+        </svg>
+        <p class="art-hint" data-en="tap the glass to pour">შეეხე ჭიქას — ჩამოასხი</p>
       </div>
       <ol class="steps">
         <li class="step reveal">
@@ -174,7 +284,7 @@
           <span class="step-n">02</span>
           <div>
             <h3 data-en="Hot espresso">ცხელი ესპრესო</h3>
-            <p data-en="A freshly pulled shot, poured straight over the scoop.">ახლად მოხარშული შოტი, პირდაპირ ნაყინზე ჩამოსხმული.</p>
+            <p data-en="A freshly pulled double shot, poured straight over the scoop.">ახლად მოხარშული ორმაგი შოტი, პირდაპირ ნაყინზე ჩამოსხმული.</p>
           </div>
           <svg class="step-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 18 H34 Q33 34 21 36 Q9 34 8 18Z M34 21 q8 0 7 6 q-1 6 -9 4" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><path d="M16 6 q-3 4 0 8 M24 4 q-3 5 0 10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
         </li>
@@ -190,54 +300,45 @@
     </div>
   </section>
 
-  <section class="menu" id="menu">
+  <section class="stories" id="stories">
     <div class="wrap">
-      <div class="menu-head reveal">
-        <div>
-          <p class="eyebrow" data-en="Menu">მენიუ</p>
-          <h2 data-en="For any hour of the day">დღის ნებისმიერ დროს</h2>
+      <div class="stories-grid">
+        <div class="stories-copy reveal">
+          <span class="badge-new" data-en="New location">ახალი ფილიალი</span>
+          <h2 class="stories-logo">STORIES<small>by affogato</small></h2>
+          <p class="stories-tag">Breakfast · Brunch · Dinner</p>
+          <p class="body-lg" data-en="Our new home in Vake: a sunny terrace under the plane trees, slow breakfasts, long brunches and evenings with friends. We take coffee seriously. Ourselves? Not so much.">ჩვენი ახალი სახლი ვაკეში: მზიანი ტერასა ჭადრების ქვეშ, ნელი საუზმე, გრძელი ბრანჩი და საღამოები მეგობრებთან. ყავას სერიოზულად ვეკიდებით. საკუთარ თავს? არც ისე.</p>
+          <ul class="facts">
+            <li><span data-en="Address">მისამართი</span><b data-en="14/16 Ilia Chavchavadze Ave, Vake">ილია ჭავჭავაძის გამზ. 14/16, ვაკე</b></li>
+            <li><span data-en="Hours">საათები</span><b><span data-en="Mon–Sun">ორშ–კვი</span> 09:00 – 22:00</b></li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-clay" href="https://oddmenu.com/p/cafe-stories" target="_blank" rel="noopener" data-en="Stories menu">Stories-ის მენიუ</a>
+            <a class="btn btn-outline-clay" href="https://www.instagram.com/cafestories.ge/" target="_blank" rel="noopener">Instagram</a>
+          </div>
         </div>
-        <div class="tabs" role="tablist" aria-label="Menu categories">
-          <button role="tab" id="tab-coffee" aria-controls="p-coffee" aria-selected="true" data-en="Coffee">ყავა</button>
-          <button role="tab" id="tab-signature" aria-controls="p-signature" aria-selected="false" tabindex="-1" data-en="Signature">სიგნატურა</button>
-          <button role="tab" id="tab-food" aria-controls="p-food" aria-selected="false" tabindex="-1" data-en="Sandwiches &amp; salads">სენდვიჩები &amp; სალათები</button>
-          <button role="tab" id="tab-sweet" aria-controls="p-sweet" aria-selected="false" tabindex="-1" data-en="Sweets">ტკბილეული</button>
+
+        <div class="mosaic">
+          <figure class="m m1 reveal"><img src="assets/media/stories-storefront.webp" alt="Stories — ფასადი და ტერასა ვაკეში" width="787" height="1400" loading="lazy"></figure>
+          <figure class="m m2 reveal"><video class="auto-video" src="assets/media/stories-pour.mp4" muted loop playsinline preload="metadata" aria-label="Espresso poured over iced tonic at Stories"></video></figure>
+          <figure class="m m3 reveal"><img src="assets/media/stories-brunch.webp" alt="ბრანჩი Stories-ში: ფაფა კენკრით და ცივი ყავა" width="674" height="1200" loading="lazy"></figure>
+          <figure class="m m4 reveal"><img src="assets/media/stories-cheers.webp" alt="Aperol spritz ტერასაზე" width="676" height="1200" loading="lazy"></figure>
         </div>
       </div>
 
-      <!-- TODO: შეცვალეთ რეალური მენიუთი და ფასებით — ქვემოთ მოცემული ნიმუშია -->
-      <div class="panels">
-        <ul class="menu-list" role="tabpanel" id="p-coffee" aria-labelledby="tab-coffee">
-          <li><div class="mi-top"><h3 data-en="Espresso">ესპრესო</h3><span class="dots"></span><span class="price">4</span></div><p data-en="Double shot, thick crema">ორმაგი შოტი, სქელი კრემა</p></li>
-          <li><div class="mi-top"><h3 data-en="Americano">ამერიკანო</h3><span class="dots"></span><span class="price">5</span></div><p data-en="Espresso, hot water">ესპრესო, ცხელი წყალი</p></li>
-          <li><div class="mi-top"><h3 data-en="Cappuccino">კაპუჩინო</h3><span class="dots"></span><span class="price">6.5</span></div><p data-en="Espresso, silky milk foam">ესპრესო, ხავერდოვანი რძის ქაფი</p></li>
-          <li><div class="mi-top"><h3 data-en="Flat white">ფლეტ უაიტი</h3><span class="dots"></span><span class="price">7</span></div><p data-en="Double ristretto, thin microfoam">ორმაგი რისტრეტო, თხელი მიკროქაფი</p></li>
-          <li><div class="mi-top"><h3 data-en="Latte">ლატე</h3><span class="dots"></span><span class="price">7</span></div><p data-en="Espresso, lots of steamed milk">ესპრესო, ბევრი ათქვეფილი რძე</p></li>
-          <li><div class="mi-top"><h3 data-en="Vanilla raf">ვანილის რაფი</h3><span class="dots"></span><span class="price">8</span></div><p data-en="Espresso, cream, vanilla">ესპრესო, ნაღები, ვანილი</p></li>
-          <li><div class="mi-top"><h3 data-en="Cold brew">ქოლდ ბრიუ</h3><span class="dots"></span><span class="price">8</span></div><p data-en="Steeped cold for 18 hours">18 საათი ცივად დაყენებული</p></li>
-          <li><div class="mi-top"><h3 data-en="Espresso tonic">ესპრესო ტონიკი</h3><span class="dots"></span><span class="price">9</span></div><p data-en="Tonic, ice, a shot on top">ტონიკი, ყინული, ზემოდან შოტი</p></li>
-        </ul>
-        <ul class="menu-list" role="tabpanel" id="p-signature" aria-labelledby="tab-signature" hidden>
-          <li class="feat"><div class="mi-top"><h3 data-en="Affogato classic">აფოგატო კლასიკი</h3><span class="dots"></span><span class="price">9</span></div><p data-en="Vanilla gelato, double espresso">ვანილის ნაყინი, ორმაგი ესპრესო</p></li>
-          <li><div class="mi-top"><h3 data-en="Salted caramel affogato">მარილიანი კარამელის აფოგატო</h3><span class="dots"></span><span class="price">10</span></div><p data-en="Caramel, flaky salt, espresso">კარამელი, ზღვის მარილი, ესპრესო</p></li>
-          <li><div class="mi-top"><h3 data-en="Pistachio affogato">ფისტას აფოგატო</h3><span class="dots"></span><span class="price">11</span></div><p data-en="Pistachio gelato, espresso, crushed nuts">ფისტას ნაყინი, ესპრესო, დაფქული თხილი</p></li>
-          <li><div class="mi-top"><h3 data-en="Iced affogato latte">აისდ აფოგატო ლატე</h3><span class="dots"></span><span class="price">10</span></div><p data-en="Milk, ice, gelato, espresso">რძე, ყინული, ნაყინი, ესპრესო</p></li>
-        </ul>
-        <ul class="menu-list" role="tabpanel" id="p-food" aria-labelledby="tab-food" hidden>
-          <li><div class="mi-top"><h3 data-en="Croissant sandwich">კრუასან-სენდვიჩი</h3><span class="dots"></span><span class="price">12</span></div><p data-en="Ham, cheese, butter croissant">ლორი, ყველი, კარაქიანი კრუასანი</p></li>
-          <li><div class="mi-top"><h3 data-en="Chicken pesto ciabatta">ქათმის პესტო ჩიაბატა</h3><span class="dots"></span><span class="price">15</span></div><p data-en="Grilled chicken, pesto, tomato">შემწვარი ქათამი, პესტო, პომიდორი</p></li>
-          <li><div class="mi-top"><h3 data-en="Caprese sandwich">კაპრეზე სენდვიჩი</h3><span class="dots"></span><span class="price">13</span></div><p data-en="Mozzarella, tomato, basil">მოცარელა, პომიდორი, რეჰანი</p></li>
-          <li><div class="mi-top"><h3 data-en="Caesar salad">ცეზარის სალათი</h3><span class="dots"></span><span class="price">18</span></div><p data-en="Chicken, parmesan, croutons">ქათამი, პარმეზანი, ხრაშუნები</p></li>
-          <li><div class="mi-top"><h3 data-en="Quinoa &amp; avocado">კინოა &amp; ავოკადო</h3><span class="dots"></span><span class="price">17</span></div><p data-en="Greens, citrus dressing">მწვანილი, ციტრუსის სოუსი</p></li>
-        </ul>
-        <ul class="menu-list" role="tabpanel" id="p-sweet" aria-labelledby="tab-sweet" hidden>
-          <li><div class="mi-top"><h3 data-en="Cheesecake">ჩიზქეიქი</h3><span class="dots"></span><span class="price">12</span></div><p data-en="Baked, New York style">გამომცხვარი, ნიუ-იორკის სტილი</p></li>
-          <li><div class="mi-top"><h3 data-en="Tiramisu">ტირამისუ</h3><span class="dots"></span><span class="price">12</span></div><p data-en="Mascarpone, espresso, cocoa">მასკარპონე, ესპრესო, კაკაო</p></li>
-          <li><div class="mi-top"><h3 data-en="Butter croissant">კარაქიანი კრუასანი</h3><span class="dots"></span><span class="price">6</span></div><p data-en="Flaky, baked every morning">ფენოვანი, ყოველ დილით გამომცხვარი</p></li>
-          <li><div class="mi-top"><h3 data-en="Chocolate cookie">შოკოლადის ქუქი</h3><span class="dots"></span><span class="price">5</span></div><p data-en="Dark chocolate, sea salt">შავი შოკოლადი, ზღვის მარილი</p></li>
-        </ul>
+      <div class="catering">
+        <div class="catering-copy reveal">
+          <p class="eyebrow" data-en="Catering by Stories">კეიტერინგი Stories-გან</p>
+          <h3 data-en="Your event, our signature menu">თქვენი ღონისძიება, ჩვენი საავტორო მენიუ</h3>
+          <p data-en="Full-service catering — from a garden picnic in the hills to an office opening. Write to us on Instagram.">სრული კეიტერინგ სერვისი — მთის პიკნიკიდან ოფისის გახსნამდე. მოგვწერეთ Instagram-ზე.</p>
+        </div>
+        <div class="catering-row">
+          <figure class="reveal"><img src="assets/media/stories-picnic.webp" alt="პიკნიკის კეიტერინგი მთაში" width="1050" height="1400" loading="lazy"></figure>
+          <figure class="reveal"><img src="assets/media/stories-picnic-food.webp" alt="ხილი და კანაპეები" width="1050" height="1400" loading="lazy"></figure>
+          <figure class="reveal"><img src="assets/media/stories-catering-table.webp" alt="კეიტერინგის მაგიდა" width="1053" height="1400" loading="lazy"></figure>
+          <figure class="reveal"><img src="assets/media/stories-pour-wine.webp" alt="შამპანურის ჩამოსხმა" width="955" height="1273" loading="lazy"></figure>
+        </div>
       </div>
-      <p class="menu-note" data-en="Prices in GEL (₾)">ფასები ლარშია (₾)</p>
     </div>
   </section>
 
@@ -251,12 +352,12 @@
         <article class="pillar reveal">
           <svg class="pillar-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 L28.5 17.5 L43 18 L31.5 26.5 L35.5 40.5 L24 32 L12.5 40.5 L16.5 26.5 L5 18 L19.5 17.5 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
           <h3 data-en="Premium &amp; gourmet ingredients">პრემიუმ &amp; გურმე ინგრედიენტები</h3>
-          <p data-en="Everything starts with what goes in: selected beans, real milk, quality gelato.">ყველაფერი ნედლეულით იწყება: შერჩეული მარცვალი, ნამდვილი რძე, ხარისხიანი ნაყინი.</p>
+          <p data-en="Everything starts with what goes in: selected beans, real milk, stracciatella, smoked salmon, truffle.">ყველაფერი ნედლეულით იწყება: შერჩეული მარცვალი, ნამდვილი რძე, სტრაჩატელა, შებოლილი ორაგული, ტრუფელი.</p>
         </article>
         <article class="pillar pillar-sand reveal">
           <svg class="pillar-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20 Q24 4 42 20 Z M6 26 H42 M8 32 H40 Q40 40 32 40 H16 Q8 40 8 32Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
-          <h3 data-en="Sandwiches &amp; salads">სენდვიჩები &amp; სალათები</h3>
-          <p data-en="Fresh and simple — for a quick lunch or a slow Saturday.">ახალი და მარტივი — სწრაფი ლანჩისთვის ან ნელი შაბათისთვის.</p>
+          <h3 data-en="Bowls, pasta &amp; sandwiches">ბოულები, პასტა &amp; სენდვიჩები</h3>
+          <p data-en="Fresh and honest — for a quick lunch at East Point or a slow Saturday in Vake.">ახალი და გულწრფელი — სწრაფი ლანჩისთვის East Point-ში ან ნელი შაბათისთვის ვაკეში.</p>
         </article>
         <article class="pillar reveal">
           <svg class="pillar-ic mark-ic"><use href="#mark"/></svg>
@@ -267,37 +368,49 @@
     </div>
   </section>
 
-  <section class="visit" id="visit">
-    <div class="wrap visit-grid">
-      <div class="visit-copy reveal">
+  <section class="locations" id="locations">
+    <div class="wrap">
+      <div class="loc-head reveal">
         <p class="eyebrow" data-en="Visit us">მოგვინახულეთ</p>
-        <h2 data-en="See you in Tbilisi">გელოდებით თბილისში</h2>
-        <dl class="info">
-          <div>
-            <dt data-en="Address">მისამართი</dt>
-            <!-- TODO: ქუჩა და ნომერი -->
-            <dd data-en="Tbilisi, Georgia">თბილისი, საქართველო</dd>
-          </div>
-          <div>
-            <dt data-en="Hours">სამუშაო საათები</dt>
-            <!-- TODO: რეალური საათები; განაახლეთ OPEN/CLOSE script.js-შიც -->
-            <dd><span data-en="Every day">ყოველდღე</span> 09:00 – 22:00</dd>
-            <dd><span class="status" id="status"></span></dd>
-          </div>
-        </dl>
-        <div class="cta-row">
-          <a class="btn btn-green" href="https://www.google.com/maps/search/?api=1&amp;query=Affogato+Tbilisi" target="_blank" rel="noopener" data-en="Open in Google Maps">Google Maps-ზე გახსნა</a>
-          <a class="btn btn-outline" href="https://www.facebook.com/p/Affogato-%E1%83%90%E1%83%A4%E1%83%9D%E1%83%92%E1%83%90%E1%83%A2%E1%83%9D-100093991607832/" target="_blank" rel="noopener">Facebook</a>
-        </div>
+        <h2 data-en="Two places, one signature">ორი სივრცე, ერთი ხელწერა</h2>
       </div>
+      <div class="loc-grid">
+        <article class="loc loc-affogato reveal">
+          <div class="loc-media"><img src="assets/media/affogato-banana-latte.webp" alt="Affogato — Banana latte" width="1000" height="1000" loading="lazy"></div>
+          <div class="loc-body">
+            <div class="loc-brand"><svg class="loc-mark"><use href="#mark"/></svg><span>affogato</span></div>
+            <h3>East Point</h3>
+            <dl class="info">
+              <div><dt data-en="Address">მისამართი</dt><dd data-en="2 Aleksandre Tvalchrelidze St, East Point, 3rd floor, food court">ალ. თვალჭრელიძის ქ. 2, East Point, მე-3 სართული, კვების ზონა</dd></div>
+              <div><dt data-en="Delivery">მიტანა</dt><dd><span data-en="Wolt, every day">Wolt, ყოველდღე</span> 10:00 – 20:45</dd></div>
+              <div><dt data-en="Phone">ტელეფონი</dt><dd><a href="tel:+995575758484">+995 575 75 84 84</a></dd></div>
+            </dl>
+            <div class="cta-row">
+              <a class="btn btn-green" href="https://www.google.com/maps/search/?api=1&amp;query=East+Point+Tbilisi+Affogato" target="_blank" rel="noopener" data-en="Map">რუკა</a>
+              <a class="btn btn-outline" href="https://wolt.com/ka/geo/tbilisi/restaurant/affogato" target="_blank" rel="noopener">Wolt</a>
+              <a class="btn btn-outline" href="https://glovoapp.com/ka/ge/tbilisi/" target="_blank" rel="noopener">Glovo</a>
+            </div>
+          </div>
+        </article>
 
-      <a class="fb-card reveal" href="https://www.facebook.com/p/Affogato-%E1%83%90%E1%83%A4%E1%83%9D%E1%83%92%E1%83%90%E1%83%A2%E1%83%9D-100093991607832/" target="_blank" rel="noopener">
-        <svg class="fb-mark"><use href="#mark"/></svg>
-        <span class="fb-word">affogato</span>
-        <span class="fb-sub">COFFEE CULTURE</span>
-        <span class="fb-stat"><b>2,400+</b> <span data-en="followers on Facebook">მიმდევარი Facebook-ზე</span></span>
-        <span class="fb-go" aria-hidden="true">↗</span>
-      </a>
+        <article class="loc loc-stories reveal">
+          <div class="loc-media"><img src="assets/media/stories-terrace.webp" alt="Stories — ტერასა ჭადრების ქვეშ" width="789" height="1400" loading="lazy"><span class="badge-new" data-en="New">ახალი</span></div>
+          <div class="loc-body">
+            <div class="loc-brand stories-mini">STORIES <small>by affogato</small></div>
+            <h3 data-en="Vake">ვაკე</h3>
+            <dl class="info">
+              <div><dt data-en="Address">მისამართი</dt><dd data-en="14/16 Ilia Chavchavadze Ave">ილია ჭავჭავაძის გამზ. 14/16</dd></div>
+              <div><dt data-en="Hours">საათები</dt><dd><span data-en="Mon–Sun">ორშ–კვი</span> 09:00 – 22:00 <span class="status" id="status-stories"></span></dd></div>
+              <div><dt data-en="Menu">მენიუ</dt><dd>Breakfast · Brunch · Dinner</dd></div>
+            </dl>
+            <div class="cta-row">
+              <a class="btn btn-clay" href="https://www.google.com/maps/search/?api=1&amp;query=Stories+14%2F16+Ilia+Chavchavadze+Ave+Tbilisi" target="_blank" rel="noopener" data-en="Map">რუკა</a>
+              <a class="btn btn-outline-clay" href="https://oddmenu.com/p/cafe-stories" target="_blank" rel="noopener" data-en="Menu">მენიუ</a>
+              <a class="btn btn-outline-clay" href="https://www.instagram.com/cafestories.ge/" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 </main>
@@ -309,11 +422,12 @@
       <p class="footer-tag">COFFEE CULTURE · <span data-en="Tbilisi">თბილისი</span></p>
       <ul class="footer-links">
         <li><a href="#menu" data-en="Menu">მენიუ</a></li>
-        <li><a href="#about" data-en="About">ჩვენ შესახებ</a></li>
-        <li><a href="#visit" data-en="Visit">მოგვინახულეთ</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#locations" data-en="Locations">ფილიალები</a></li>
         <li><a href="https://www.facebook.com/p/Affogato-%E1%83%90%E1%83%A4%E1%83%9D%E1%83%92%E1%83%90%E1%83%A2%E1%83%9D-100093991607832/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/cafestories.ge/" target="_blank" rel="noopener">Instagram · Stories</a></li>
       </ul>
-      <p class="footer-copy">© <span id="year">2026</span> Affogato • აფოგატო</p>
+      <p class="footer-copy">© <span id="year">2026</span> <span data-en="Affogato LLC">შპს აფოგატო</span></p>
     </div>
   </div>
 </footer>
