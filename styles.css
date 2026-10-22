@@ -364,6 +364,23 @@ html:lang(ka) .hero-title .accent { font-weight: 400; }
 @keyframes drip { to { transform: scaleY(1); } }
 @keyframes sink { to { transform: translateY(6px); } }
 
+/* ---------- branch (East Point) ---------- */
+.branch { padding: clamp(80px, 11vw, 140px) 0; background: var(--cream); }
+.branch-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(40px, 6vw, 88px); align-items: center; }
+.branch h2 { margin-bottom: 22px; }
+.branch h2 em { font-style: italic; font-weight: 300; color: var(--green-600); }
+.branch .body-lg { margin-bottom: 28px; }
+.branch .facts li { border-color: rgba(49,76,57,.18); }
+.branch .facts > li > span { color: var(--green-600); }
+.branch .facts a { text-decoration: none; }
+.branch-mosaic { display: grid; grid-template-columns: 1.1fr 1fr; grid-template-rows: auto auto auto; gap: 14px; }
+.bm { position: relative; border-radius: 22px; overflow: hidden; background: var(--sand-300); box-shadow: 0 30px 60px -36px rgba(34,56,42,.55); }
+.bm img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+.bm:hover img { transform: scale(1.04); }
+.bm-front { grid-row: 1 / 3; border-radius: 999px 999px 22px 22px; }
+.bm-counter, .bm-plate { aspect-ratio: 1; }
+.bm-wide { grid-column: 1 / -1; aspect-ratio: 16 / 7; }
+
 /* ---------- stories ---------- */
 .stories {
   padding: clamp(80px, 11vw, 150px) 0;
@@ -472,7 +489,7 @@ html:lang(ka) .hero-title .accent { font-weight: 400; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
-  .hero-grid, .ritual-grid, .stories-grid, .loc-grid { grid-template-columns: 1fr; }
+  .hero-grid, .ritual-grid, .stories-grid, .branch-grid, .loc-grid { grid-template-columns: 1fr; }
   .hero-art { width: min(72%, 320px); order: -1; }
   .ritual-head { position: static; }
   .pillars { grid-template-columns: 1fr; }
