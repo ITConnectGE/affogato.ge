@@ -369,15 +369,6 @@ html:lang(ka) .hero-title .accent { font-weight: 400; }
 .mosaic .m3 { aspect-ratio: 3 / 3.4; margin-top: -40px; }
 .mosaic .m4 { aspect-ratio: 3 / 4; }
 
-.catering { margin-top: clamp(72px, 9vw, 120px); display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
-.catering .eyebrow { color: var(--clay-700); }
-.catering h3 { font-family: var(--f-display); font-size: clamp(28px, 3.2vw, 42px); line-height: 1.1; letter-spacing: -.01em; color: var(--stories-ink); margin-bottom: 16px; }
-.catering-copy p:last-child { color: #5b463e; max-width: 40ch; }
-.catering-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; align-items: start; }
-.catering-row figure { position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 3 / 4.4; }
-.catering-row figure:nth-child(even) { margin-top: 28px; }
-.catering-row img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
-.catering-row figure:hover img { transform: scale(1.06); }
 
 /* ---------- about ---------- */
 .about { padding: clamp(80px, 11vw, 140px) 0; background: var(--green); color: var(--cream); position: relative; overflow: hidden; }
@@ -452,14 +443,12 @@ html:lang(ka) .hero-title .accent { font-weight: 400; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
-  .hero-grid, .ritual-grid, .stories-grid, .catering, .loc-grid { grid-template-columns: 1fr; }
+  .hero-grid, .ritual-grid, .stories-grid, .loc-grid { grid-template-columns: 1fr; }
   .hero-art { width: min(72%, 320px); order: -1; }
   .ritual-head { position: static; }
   .pillars { grid-template-columns: 1fr; }
   .pillar:nth-child(n) { margin-top: 0; }
   .pillar-ic { margin-bottom: 28px; }
-  .catering-row { grid-template-columns: repeat(2, 1fr); }
-  .catering-row figure:nth-child(even) { margin-top: 0; }
 }
 @media (max-width: 780px) {
   .burger { display: block; }
