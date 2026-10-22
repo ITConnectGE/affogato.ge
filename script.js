@@ -126,7 +126,9 @@
     syncButton(v);
   }
 
-  videos.forEach((v) => {
+  const soundVideos = [...videos].filter((v) => !('noSound' in v.dataset));
+
+  soundVideos.forEach((v) => {
     const box = v.parentElement;
     if (!canHover) return;
     box.addEventListener('mouseenter', () => {
@@ -148,11 +150,12 @@
     setTimeout(() => unmute(v), 0);
   }, true);
 
-  // phones / tablets: tap the video to toggle sound
+  // phones / tablets: tap the video to toggle sound.
+  // The listener sits on the <video> itself — iOS Safari doesn't reliably
+  // pass taps on a video up to its parent.
   if (!canHover) {
-    videos.forEach((v) => {
-      v.parentElement.addEventListener('click', (e) => {
-        if (e.target.closest('.reel-sound')) return;
+    soundVideos.forEach((v) => {
+      v.addEventListener('click', () => {
         if (v.muted) unmute(v);
         else mute(v);
       });

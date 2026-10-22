@@ -159,7 +159,7 @@ html:lang(en) .need-click::after { content: "🔊 Click to turn on sound"; }
 @media not all and (hover: hover) and (pointer: fine) {
   .hint-hover { display: none; }
   .hint-touch { display: inline; }
-  .reel-box, .sm-video { cursor: pointer; }
+  .reel-box video { cursor: pointer; }
 }
 
 /* stories */
