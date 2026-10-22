@@ -103,10 +103,25 @@
   const revealEls = document.querySelectorAll('.reveal');
   const videos = document.querySelectorAll('.auto-video');
 
-  // some reels end on a logo card — loop before it
-  videos.forEach((v) => {
-    const end = Number(v.dataset.loopEnd);
-    if (end) v.addEventListener('timeupdate', () => { if (v.currentTime >= end) v.currentTime = 0; });
+  // reels: one video with sound at a time
+  const soundButtons = document.querySelectorAll('.reel-sound');
+  soundButtons.forEach((b) => {
+    b.addEventListener('click', () => {
+      const v = b.closest('.reel').querySelector('video');
+      const on = v.muted;
+      soundButtons.forEach((o) => {
+        const ov = o.closest('.reel').querySelector('video');
+        ov.muted = true;
+        o.setAttribute('aria-pressed', 'false');
+        o.textContent = '🔇';
+      });
+      if (on) {
+        v.muted = false;
+        v.play().catch(() => {});
+        b.setAttribute('aria-pressed', 'true');
+        b.textContent = '🔊';
+      }
+    });
   });
 
   if ('IntersectionObserver' in window) {
