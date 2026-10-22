@@ -1,10 +1,9 @@
 (() => {
-  // Stories by Affogato — ორშ–კვი 09:00–22:00 (თბილისის დროით)
+  // Stories: ორშ-კვი 09:00-22:00 (თბილისის დროით)
   const STORIES_OPEN = 9 * 60;
   const STORIES_CLOSE = 22 * 60;
 
   const root = document.documentElement;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const store = {
     get(k) { try { return localStorage.getItem(k); } catch { return null; } },
     set(k, v) { try { localStorage.setItem(k, v); } catch { /* storage unavailable */ } },
@@ -28,7 +27,7 @@
   }
   langButtons.forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
 
-  /* ---------- open / closed ---------- */
+  /* ---------- Stories open / closed ---------- */
   const statusEl = document.getElementById('status-stories');
   function renderStatus() {
     if (!statusEl) return;
@@ -40,22 +39,27 @@
     statusEl.className = 'status ' + (open ? 'open' : 'closed');
     statusEl.textContent = open
       ? (lang === 'en' ? 'Open now' : 'ახლა ღიაა')
-      : (lang === 'en' ? 'Closed now' : 'ახლა დაკეტილია');
+      : (lang === 'en' ? 'Closed' : 'დაკეტილია');
   }
   setInterval(renderStatus, 60000);
 
-  /* ---------- mobile nav ---------- */
-  const burger = document.querySelector('.burger');
-  const links = document.getElementById('nav-links');
-  burger.addEventListener('click', () => {
-    const open = burger.getAttribute('aria-expanded') !== 'true';
-    burger.setAttribute('aria-expanded', String(open));
-    links.classList.toggle('open', open);
+  /* ---------- header ---------- */
+  const header = document.querySelector('.header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('nav');
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('open', open);
   });
-  links.addEventListener('click', (e) => {
+  nav.addEventListener('click', (e) => {
     if (e.target.closest('a')) {
-      burger.setAttribute('aria-expanded', 'false');
-      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('open');
     }
   });
 
@@ -80,28 +84,18 @@
     });
   });
 
-  /* ---------- "new" carousel ---------- */
-  const track = document.getElementById('news-track');
-  document.querySelectorAll('[data-scroll]').forEach((b) => {
-    b.addEventListener('click', () => {
-      const card = track.querySelector('.news-card');
-      const step = card ? card.getBoundingClientRect().width + 20 : 320;
-      track.scrollBy({ left: step * Number(b.dataset.scroll), behavior: reduceMotion ? 'auto' : 'smooth' });
-    });
-  });
-
-  /* ---------- affogato pour ---------- */
-  const glass = document.querySelector('.affogato');
-  function pour() {
-    glass.classList.remove('is-playing');
-    void glass.getBoundingClientRect();
-    glass.classList.add('is-playing');
-  }
-  glass.addEventListener('click', pour);
-
-  /* ---------- scroll-driven: reveal, pour, videos ---------- */
-  const revealEls = document.querySelectorAll('.reveal');
+  /* ---------- videos: play when visible ---------- */
   const videos = document.querySelectorAll('.auto-video');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    const vio = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) en.target.play().catch(() => {});
+        else en.target.pause();
+      });
+    }, { threshold: 0.25 });
+    videos.forEach((v) => vio.observe(v));
+  }
 
   /* ---------- video sound: hover to listen (desktop), buttons on reels ---------- */
   // Browsers allow sound only after the visitor has clicked/tapped the page once;
@@ -157,34 +151,6 @@
       else mute(v);
     });
   });
-
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach((el) => io.observe(el));
-
-    const glassIO = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) { pour(); glassIO.disconnect(); }
-    }, { threshold: 0.5 });
-    glassIO.observe(glass);
-
-    if (!reduceMotion) {
-      const vio = new IntersectionObserver((entries) => {
-        entries.forEach((en) => {
-          const v = en.target;
-          if (en.isIntersecting) v.play().catch(() => {});
-          else v.pause();
-        });
-      }, { threshold: 0.25 });
-      videos.forEach((v) => vio.observe(v));
-    }
-  } else {
-    revealEls.forEach((el) => el.classList.add('in'));
-    glass.classList.add('is-playing');
-  }
 
   document.getElementById('year').textContent = new Date().getFullYear();
   setLang(store.get('affogato-lang') === 'en' ? 'en' : 'ka');
