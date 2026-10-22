@@ -278,6 +278,18 @@ html:lang(ka) .hero-title .accent { font-weight: 400; }
 .reel-sound:hover { transform: scale(1.08); }
 .reel-sound[aria-pressed="true"] { background: var(--sand); }
 
+/* hover-for-sound hint, shown until the first click on the page */
+.need-click { cursor: pointer; }
+.need-click::after {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 3;
+  padding: 10px 16px; border-radius: 999px; white-space: nowrap; pointer-events: none;
+  background: rgba(12,20,15,.72); backdrop-filter: blur(6px); color: var(--cream);
+  font-size: 13px; font-weight: 700; letter-spacing: .02em;
+  content: "🔊 დააწკაპე ხმის ჩასართავად";
+  animation: itemIn .3s var(--ease) both;
+}
+html:lang(en) .need-click::after { content: "🔊 Click to turn on sound"; }
+
 /* ---------- menu ---------- */
 .menu {
   padding: clamp(80px, 11vw, 140px) 0;

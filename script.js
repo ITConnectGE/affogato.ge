@@ -103,24 +103,58 @@
   const revealEls = document.querySelectorAll('.reveal');
   const videos = document.querySelectorAll('.auto-video');
 
-  // reels: one video with sound at a time
-  const soundButtons = document.querySelectorAll('.reel-sound');
-  soundButtons.forEach((b) => {
+  /* ---------- video sound: hover to listen (desktop), buttons on reels ---------- */
+  // Browsers allow sound only after the visitor has clicked/tapped the page once;
+  // until then hovering shows a hint instead.
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const soundUnlocked = () => !navigator.userActivation || navigator.userActivation.hasBeenActive;
+  let hovered = null;
+
+  function syncButton(v) {
+    const b = v.parentElement.querySelector('.reel-sound');
+    if (!b) return;
+    b.setAttribute('aria-pressed', String(!v.muted));
+    b.textContent = v.muted ? '🔇' : '🔊';
+  }
+  function mute(v) {
+    v.muted = true;
+    syncButton(v);
+  }
+  function unmute(v) {
+    videos.forEach((o) => { if (o !== v && !o.muted) mute(o); });
+    v.muted = false;
+    v.parentElement.classList.remove('need-click');
+    v.play().catch(() => mute(v)); // blocked by the browser → stay muted
+    syncButton(v);
+  }
+
+  videos.forEach((v) => {
+    const box = v.parentElement;
+    if (!canHover) return;
+    box.addEventListener('mouseenter', () => {
+      hovered = v;
+      if (soundUnlocked()) unmute(v);
+      else box.classList.add('need-click');
+    });
+    box.addEventListener('mouseleave', () => {
+      if (hovered === v) hovered = null;
+      box.classList.remove('need-click');
+      mute(v);
+    });
+  });
+
+  // the first click unlocks sound — start the video under the cursor right away
+  document.addEventListener('pointerdown', (e) => {
+    if (!hovered || !hovered.muted || e.target.closest('.reel-sound')) return;
+    const v = hovered;
+    setTimeout(() => unmute(v), 0);
+  }, true);
+
+  document.querySelectorAll('.reel-sound').forEach((b) => {
     b.addEventListener('click', () => {
-      const v = b.closest('.reel').querySelector('video');
-      const on = v.muted;
-      soundButtons.forEach((o) => {
-        const ov = o.closest('.reel').querySelector('video');
-        ov.muted = true;
-        o.setAttribute('aria-pressed', 'false');
-        o.textContent = '🔇';
-      });
-      if (on) {
-        v.muted = false;
-        v.play().catch(() => {});
-        b.setAttribute('aria-pressed', 'true');
-        b.textContent = '🔊';
-      }
+      const v = b.parentElement.querySelector('video');
+      if (v.muted) unmute(v);
+      else mute(v);
     });
   });
 
