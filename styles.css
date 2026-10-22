@@ -155,6 +155,13 @@ h2 { font-size: clamp(28px, 3.4vw, 40px); color: var(--green); margin-bottom: 28
 }
 html:lang(en) .need-click::after { content: "🔊 Click to turn on sound"; }
 
+.hint-touch { display: none; }
+@media not all and (hover: hover) and (pointer: fine) {
+  .hint-hover { display: none; }
+  .hint-touch { display: inline; }
+  .reel-box, .sm-video { cursor: pointer; }
+}
+
 /* stories */
 .stories { background: var(--blush); padding: 80px 0; }
 .stories-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }

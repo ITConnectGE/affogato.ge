@@ -90,8 +90,12 @@
   if ('IntersectionObserver' in window && !reduceMotion) {
     const vio = new IntersectionObserver((entries) => {
       entries.forEach((en) => {
-        if (en.isIntersecting) en.target.play().catch(() => {});
-        else en.target.pause();
+        if (en.isIntersecting) {
+          en.target.play().catch(() => {});
+        } else {
+          en.target.pause();
+          if (!en.target.muted) mute(en.target); // don't resume with sound after scrolling away
+        }
       });
     }, { threshold: 0.25 });
     videos.forEach((v) => vio.observe(v));
@@ -143,6 +147,17 @@
     const v = hovered;
     setTimeout(() => unmute(v), 0);
   }, true);
+
+  // phones / tablets: tap the video to toggle sound
+  if (!canHover) {
+    videos.forEach((v) => {
+      v.parentElement.addEventListener('click', (e) => {
+        if (e.target.closest('.reel-sound')) return;
+        if (v.muted) unmute(v);
+        else mute(v);
+      });
+    });
+  }
 
   document.querySelectorAll('.reel-sound').forEach((b) => {
     b.addEventListener('click', () => {
